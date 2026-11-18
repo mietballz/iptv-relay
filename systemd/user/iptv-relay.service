@@ -1,0 +1,24 @@
+[Unit]
+Description=IPTV Relay – ffplay Multicast-Player mit HDMI-Audio
+After=network-online.target pulseaudio.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/iptv-relay/iptv-relay.env
+
+# HDMI als PulseAudio-Standard-Sink setzen (ffplay kann den Sink nicht selbst wählen)
+ExecStartPre=/usr/bin/pactl set-default-sink ${HDMI_SINK}
+ExecStartPre=/usr/bin/pactl set-sink-volume ${HDMI_SINK} 100%
+ExecStartPre=/usr/bin/pactl set-sink-mute ${HDMI_SINK} 0
+
+ExecStart=%h/.local/bin/iptv-player.sh
+
+Restart=always
+RestartSec=10
+
+StandardOutput=append:%h/.local/state/iptv-relay/iptv-player.log
+StandardError=append:%h/.local/state/iptv-relay/iptv-player-error.log
+
+[Install]
+WantedBy=default.target

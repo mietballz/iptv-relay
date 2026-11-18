@@ -1,0 +1,13 @@
+# Echte Konfigurationen niemals committen
+*.env
+!*.env.example
+netplan/*.yaml
+!netplan/*.yaml.example
+
+# Logs
+*.log
+
+# Editor / OS
+*.swp
+*~
+.DS_Store

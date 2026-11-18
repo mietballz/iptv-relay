@@ -1,0 +1,4 @@
+# Eintrag für /etc/crontab (sudo nano /etc/crontab)
+# Täglicher Neustart um 04:15 Uhr – außerhalb der Nutzungszeiten.
+# Beugt Speicherlecks, hängenden Verbindungen und Cache-Aufbau vor.
+15 4 * * * root /sbin/reboot

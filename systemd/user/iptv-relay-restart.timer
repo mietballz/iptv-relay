@@ -1,0 +1,9 @@
+[Unit]
+Description=IPTV Relay täglich um 04:15 Uhr neu starten
+
+[Timer]
+OnCalendar=*-*-* 04:15:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,6 @@
+[Unit]
+Description=IPTV Relay neu starten (Timer-Trigger)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl --user restart iptv-relay.service
