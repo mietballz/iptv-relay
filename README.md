@@ -4,6 +4,8 @@ Ein schlanker Mini-PC empfängt einen **UDP-Multicast-IPTV-Stream** aus dem Firm
 
 Das Projekt ist im produktiven Einsatz in einer Hotelumgebung entstanden. Alle Benutzernamen, IP-Adressen und Zugangsdaten in diesem Repository sind anonymisiert.
 
+> **English summary:** A small Ubuntu mini PC receives a UDP multicast IPTV stream and plays it full-screen on an HDMI TV – fully automated, 24/7, with no manual intervention. It uses `ffplay`, a systemd user service with autologin on tty1, HDMI audio via PulseAudio, a Bash watchdog that self-heals network and player issues, Netplan LAN/Wi-Fi failover and a daily scheduled restart. Built for production use in a hotel environment; all names and addresses are anonymised. Documentation is in German.
+
 ![Plattform](https://img.shields.io/badge/Ubuntu-24.04_LTS-E95420?logo=ubuntu&logoColor=white)
 ![ffmpeg](https://img.shields.io/badge/ffmpeg-ffplay-007808?logo=ffmpeg&logoColor=white)
 ![systemd](https://img.shields.io/badge/systemd-User--Service-informational)
